@@ -4,28 +4,18 @@
 
 The objective of this project is to build a weather prediction system using tinyML. The system will collect data from environmental sensors and use that data to train a neural network model. Once the model is trained, it will be deployed onto a microcontroller for use in real-time weather prediction. The overall goal of this project is to develop a highly accurate weather prediction system that can be used in a variety of applications, from agriculture to transportation. By leveraging the power of tinyML, we can build a system that is highly efficient, cost-effective, and can be deployed in even the most remote locations.
 
-
-
-### A. The Data
-Historical weather data is obtained via https://www.worldweatheronline.com/ APIs for the exact location where weather predictions will tested.
-Data between 1. July 2007 and 1. January 2023 for a particular location in Athens Greece (37.995453,23.792475).
-
-   - GET Request: http://api.worldweatheronline.com/premium/v1/past-weather.ashx?q=37.995453,23.792475&date=2008-07-01&key=913fd593e9a8439490861717230805&format=json&tp=1&enddate=2023-01-01
-   - Response Elements: https://www.worldweatheronline.com/weather-api/api/docs/historical-weather-api.aspx#qparameter
+<br>
 
 ## A. Data Source
 Historical weather data is obtained via [World Weather Online](https://www.worldweatheronline.com) APIs for the exact location where weather predictions will be tested.
 - Location: Athens, Greece
-- Duration: between 1. July 2008 and 31. December 2022 for a particular location in Athens Greece (37.995453,23.792475).
+- Duration: between 1. January 2009 and 31. December 2022
 - Endpoint: HTTPS: https://api.worldweatheronline.com/premium/v1/past-weather.ashx
-- Documentation: https://www.worldweatheronline.com/weather-api/api/docs/historical-weather-api.aspx#qparameter    
+- API Documentation: https://www.worldweatheronline.com/weather-api/api/docs/historical-weather-api.aspx#qparameter    
+  
 <br>
 
-## B. Data Collection
-
-Since the API only allows for data up to 30 days to be accesses each time, a Python script (data_scrapper.py) was used to collect all data for the required duration (1/7/2008 - 31/12/2022).
-
-## C. Data Format
+## B. API Response format of datasets:
 
 The data is collected in JSON format:
 
@@ -141,6 +131,12 @@ The data is collected in JSON format:
             },
          ...
 ```
+
+## C. Data Collection
+
+Since the API only allows for data up to 30 days to be accesses each time, a Python script (data_scrapper.py) was used to collect all data for the required duration.
+
+<br>
 
 ### A. tinyML
 
