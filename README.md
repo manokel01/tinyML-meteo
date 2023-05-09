@@ -15,7 +15,7 @@ Historical weather data is obtained via [World Weather Online](https://www.world
   
 <br>
 
-## B. API Response format of datasets:
+## B. API Response of datasets:
 
 The data is collected in JSON format:
 
