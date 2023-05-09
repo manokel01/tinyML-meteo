@@ -1,4 +1,10 @@
 ###################################
+# Project-specific Large Datasets
+###################################
+weather_data/
+parsed_weather_data/
+
+###################################
 # general ignore patterns
 ###################################
 
@@ -21,6 +27,7 @@ Release*/
 *.opensdf
 *.suo
 ipch/
+*.vscode
 
 ###################################
 # OS Specific
