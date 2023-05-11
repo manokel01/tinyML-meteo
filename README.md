@@ -1,21 +1,34 @@
-# tinyMeteo
+# tinyMeteo: A Weather Prediction Project using TinyML and Python
 
 ## Project Overview
 
-The objective of this project is to build a weather prediction system using tinyML. The system will collect data from environmental sensors and use that data to train a neural network model. Once the model is trained, it will be deployed onto a microcontroller for use in real-time weather prediction. The overall goal of this project is to develop a highly accurate weather prediction system that can be used in a variety of applications, from agriculture to transportation. By leveraging the power of tinyML, we can build a system that is highly efficient, cost-effective, and can be deployed in even the most remote locations.
+TinyMeteo is a machine learning project that uses Tiny Machine Learning (TinyML) and Python to predict weather conditions based on temperature, humidity, and pressure data. The project utilizes an Arduino Nano 33 Sense board to collect environmental data, which is then processed and fed into a machine learning model to predict the weather conditions.
+
+The dataset for this project is obtained from World Weather Online, and contains environmental data such as temperature, humidity, and pressure. JSON-formatted data  over a 13 year period for Athens in Greece collected, filtered and parsed into CSV format for easier handling.
+
+Linear regression is selected as the machine learning model for this project, as it is well-suited for predicting continuous numerical values such as temperature and pressure. Once the model is trained, it is evaluated using standard machine learning metrics such as mean squared error (MSE) and coefficient of determination (R-squared) to assess its accuracy and performance.
+
+The trained model is then deployed onto the Arduino Nano 33 Sense board using the TensorFlow Lite for Microcontrollers (TFLite Micro) library. This enables the board to make real-time weather predictions based on the current temperature, humidity, and pressure readings.
 
 <br>
 
-## A. Data Source
+### Tools and Technologies:
+- Arduino Nano 33 BLE Sense Rev2
+- Python
+- REST APIs
+- Node.js, Express.js
+- Angular
+- Tensorflow, Tensorflow Lite Micro
+  
+
+  </br>
+## Data Details
 Historical weather data is obtained via [World Weather Online](https://www.worldweatheronline.com) APIs for the exact location where weather predictions will be tested.
 - Location: Athens, Greece
 - Duration: between 1. January 2009 and 31. December 2022
-- Endpoint: HTTPS: https://api.worldweatheronline.com/premium/v1/past-weather.ashx
+- API Endpoint: https://api.worldweatheronline.com/premium/v1/past-weather.ashx
 - API Documentation: https://www.worldweatheronline.com/weather-api/api/docs/historical-weather-api.aspx#qparameter    
-  
-<br>
 
-## B. API Response of datasets:
 
 The data is collected in JSON format:
 
@@ -131,16 +144,4 @@ The data is collected in JSON format:
             },
          ...
 ```
-
-## C. Data Collection
-
-Since the API only allows for data up to 30 days to be accesses each time, a Python script (data_scrapper.py) was used to collect all data for the required duration.
-
-<br>
-
-## C. Data Filtering and Formatting
-
-The desired data is extracted for the values of temperature, humidity, pressure and weather conditions (e.g. "Sunny", "Cloudy", etc) and converted into a single CSV file for easier processing.
-
-<br>
 
